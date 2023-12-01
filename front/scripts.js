@@ -149,6 +149,7 @@ const postItemAgua = async (inputName,
   })
   .then((response) => console.log(response.json()))
 	.then((data) => {
+	alert("Água cadastrada com suscesso!");
     closeModal('dv-modal-agua-cadastro');
     getListAgua();
   })
@@ -194,6 +195,7 @@ const putItemAgua = async (idAgua,
   })
   .then((response) => response.json())
 	.then((data) => {
+	alert("Água atualizada com suscesso!");
     getListAgua();
   })
   .catch((error) => {
@@ -414,9 +416,8 @@ const salvarAgua = () => {
 					  inputOrganicCarbon, 
 					  inputTrihalomethanes, 
 					  inputTurbidity)
-    alert("Água salva com sucesso!")
     limparFormAgua();
-	  return
+	return
   }	
 }
 
@@ -451,7 +452,6 @@ const editarAgua = () => {
 					   inputOrganicCarbon, 
 					   inputTrihalomethanes, 
 					   inputTurbidity)
-	  alert("Item atualizado com sucesso!")
 	  return
   }
 }

@@ -89,8 +89,8 @@ def predict(form: AguaSchema):
     """
     
     # Carregando modelo
-    #ml_path = 'ml_model/water_potability.pkl'
-    #modelo = Model.carrega_modelo(ml_path)
+    ml_path = 'ml_model/water_potability.pkl'
+    modelo = Model.carrega_modelo(ml_path)
     
     agua = Agua(
         name=form.name.strip(),
@@ -103,8 +103,8 @@ def predict(form: AguaSchema):
         organic_carbon=form.organic_carbon,
         trihalomethanes=form.trihalomethanes,
         turbidity=form.turbidity,
-        potability=1
-        #potability=Model.preditor(modelo, form)
+        #potability=1
+        potability=Model.preditor(modelo, form)
     )
     logger.debug(f"Adicionando água de nome:'{form.name}'")
 
@@ -158,8 +158,8 @@ def predictUpdate(form: AguaSchemaUpdate):
     """
     
     # Carregando modelo
-    #ml_path = 'ml_model/water_potability.pkl'
-    #modelo = Model.carrega_modelo(ml_path)
+    ml_path = 'ml_model/water_potability.pkl'
+    modelo = Model.carrega_modelo(ml_path)
     
     
     logger.debug(f"Atualizando água de nome:'{form.name}'")
@@ -167,7 +167,6 @@ def predictUpdate(form: AguaSchemaUpdate):
 
     # fazendo a busca
     agua = session.query(Agua).filter(Agua.id == form.id).first()
-    
     if not agua:
         # se o água não foi encontrado
         error_msg = "Água não encontrada na base :/"
@@ -177,19 +176,19 @@ def predictUpdate(form: AguaSchemaUpdate):
         try:
             logger.debug(f"Água econtrada: '{agua.name}'")
 
-            agua.name=form.name.strip(),
-            agua.ph=float(form.ph),
-            agua.hardness=float(form.hardness),
-            agua.solids=float(form.solids),
-            agua.chloramines=float(form.chloramines),
-            agua.sulfate=float(form.sulfate),
-            agua.conductivity=float(form.conductivity),
-            agua.organic_carbon=float(form.organic_carbon),
-            agua.trihalomethanes=float(form.trihalomethanes),
-            agua.turbidity=float(form.turbidity),
-            agua.potability=1
-            #agua.potability=Model.preditor(modelo, form)
-
+            agua.name=form.name.strip()         
+            agua.ph=0.63
+            agua.hardness=form.hardness
+            agua.solids=form.solids
+            agua.chloramines=form.chloramines
+            agua.sulfate=form.sulfate
+            agua.conductivity=form.conductivity
+            agua.organic_carbon=form.organic_carbon
+            agua.trihalomethanes=form.trihalomethanes
+            agua.turbidity=form.turbidity
+            #agua.potability=1
+            agua.potability=Model.preditor(modelo, form)
+            
             # retorna a representação de água
             session.merge(agua)
             # efetivando o camando de adição de novo item na tabela
