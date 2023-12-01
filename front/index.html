@@ -17,7 +17,7 @@
      <!-- Cabeçalho de informações do sistema -->
     <header>
         <div class="title">
-            <h2>Sistema de Cadastro de Aguas2345345</h2>
+            <h2>Sistema de Cadastro de Águas</h2>
         </div>
         
     </header>
@@ -77,9 +77,10 @@
 				 <th style="width: 10%;">Carbono Orgânico</th>
 				 <th style="width: 10%;">Trihalometanos</th>
 				 <th style="width: 10%;">Turbidez</th>
-				 <th style="width: 10%;">Potabilidade</th>
-                 <!--<th class="colunaCenter" style="width: 14%;">Data da Cadastro</th>-->
-                <th class="colunaCenter" style="width: 10%;">Visualizar</th>
+				 <th class="colunaCenter" style="width: 14%;">Data da Cadastro</th>
+				 <th style="width: 10%;">Potabilidade</th>                
+                 <th class="colunaCenter" style="width: 10%;">Editar</th>
+				 <th class="colunaCenter" style="width: 10%;">Excluir</th>
             </tr>			
         </table>
     </section>
@@ -89,7 +90,7 @@
         <div class="modal-content">
             <div class="modal-header">               
                 <ion-icon class="close-modal" onclick="closeModal('dv-modal-agua-cadastro')" name="close-outline"></ion-icon>
-                <h1>Cadastro Agua</h1>
+                <h1>Cadastro de Água</h1>
             </div>
 
             <div class="modal-body">
@@ -99,51 +100,52 @@
 					
 					<label for="name">Nome*</label>
                     <input type="text" id="name" placeholder="Nome:">
-					<label for="ph">ph*</label>
-					<input type="text" id="ph" placeholder="ph">
                     
 					<div style="display: flex;">
-						<div style="width:20%">
-							<label for="hardness">hardness</label>
-							<input type="text" id="hardness" placeholder="Digite aqui">
+						<div style="width:33.3%;">
+							<label for="ph">PH*</label>
+							<input type="text" id="ph">
 						</div>
-						<div style="width:70%; padding-left: 10px;">
-							<label for="solids">solids</label>
+						<div style="width:33.3%; padding-left: 10px;">
+							<label for="hardness">Dureza*</label>
+							<input type="text" id="hardness" >
+						</div>
+						<div style="width:33.3%; padding-left: 10px;">
+							<label for="solids">Sólidos</label>
 							<input type="text" id="solids" >
-						</div>
-						<div style="width:20%; padding-left: 10px;">
-							<label for="chloramines">chloramines</label>
-							<input type="text" id="chloramines" placeholder="Digite aqui">
 						</div>
 					</div>
 					
-					<div class="campo-duas-colunas">
-						<div>
-							<label for="sulfate">sulfate</label>
+					<div style="display: flex;">
+						<div style="width:33.3%;">
+							<label for="chloramines">Cloraminas</label>
+							<input type="text" id="chloramines">
+						</div>
+						<div style="width:33.3%; padding-left: 10px;">
+							<label for="sulfate">Sulfato</label>
 							<input type="text" id="sulfate" >
 						</div>
-						<div>
-							<label for="conductivity">conductivity</label>
+						<div style="width:33.3%; padding-left: 10px;">
+							<label for="conductivity">Condutividade</label>
 							<input type="text" id="conductivity">
 						</div>
 					</div>
-					<div class="campo-duas-colunas">
-						<div>
-							<label for="organic_carbon">organic_carbon</label>
+					
+					<div style="display: flex;">
+						<div style="width:33.3%;">
+							<label for="organic_carbon">Carbono Orgânico</label>
 							<input type="text" id="organic_carbon" >
 						</div>
-						<div>
-							<label for="trihalomethanes">trihalomethanes</label>
+						<div style="width:33.3%; padding-left: 10px;">
+							<label for="trihalomethanes">Trihalometanos</label>
 							<input type="text" id="trihalomethanes">
 						</div>
-					</div>
-					<div class="campo-duas-colunas">
-						<div>
-							<label for="turbidity">turbidity</label>
+						<div style="width:33.3%; padding-left: 10px;">
+							<label for="turbidity">Turbidez</label>
 							<input type="text" id="turbidity">
 						</div>
 					</div>
-                    
+					
                 </div>    
             </div>
 

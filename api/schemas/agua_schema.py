@@ -1,8 +1,10 @@
 from pydantic import BaseModel
 from typing import Optional, List
-from model.agua import Agua
 import json
 import numpy as np
+
+from model.agua import Agua
+from util.data_util import DataUtil
 
 class AguaSchema(BaseModel):
     """ Define como uma nova água a ser inserida deve ser representada
@@ -17,8 +19,22 @@ class AguaSchema(BaseModel):
     organic_carbon: float = 0.627
     trihalomethanes: float = 0.627
     turbidity: float = 0.627
-    potability: int = 1
-    
+
+class AguaSchemaUpdate(BaseModel):
+    """ Define como uma nova água a ser inserida deve ser representada
+    """
+    id: int = 1
+    name: str = "Água da nascente de São Gonçalo"
+    ph: float = 0.627
+    hardness: float = 0.627
+    solids: float = 0.627
+    chloramines: float = 0.627
+    sulfate: float = 0.627
+    conductivity: float = 0.627
+    organic_carbon: float = 0.627
+    trihalomethanes: float = 0.627
+    turbidity: float = 0.627
+
 class AguaViewSchema(BaseModel):
     """Define como uma água será retornada
     """
@@ -39,7 +55,7 @@ class AguaBuscaSchema(BaseModel):
     """Define como deve ser a estrutura que representa a busca.
     Ela será feita com base no nome da água.
     """
-    name: str = "Água da nascente de São Gonçalo"
+    id: int = 1
 
 class ListaAguasSchema(BaseModel):
     """Define como uma lista de águas será representada
@@ -70,6 +86,7 @@ def apresenta_agua(agua: Agua):
         "trihalomethanes": agua.trihalomethanes,
         "turbidity": agua.turbidity,
         "potability": agua.potability,
+        "data_insercao": DataUtil.formatar(agua.data_insercao)
     }
     
 # Apresenta uma lista de aguas
@@ -92,6 +109,7 @@ def apresenta_aguas(aguas: List[Agua]):
             "trihalomethanes": agua.trihalomethanes,
             "turbidity": agua.turbidity,
             "potability": agua.potability,
+            "data_insercao": DataUtil.formatar(agua.data_insercao)
         })
 
     return {"aguas": result}

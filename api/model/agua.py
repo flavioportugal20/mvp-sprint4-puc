@@ -8,29 +8,28 @@ from  model import Base
 class Agua(Base):
     __tablename__ = 'aguas'
     id = Column(Integer, primary_key=True)
-    name = Column("Name", String(50))
-    ph = Column("ph", Float)
-    hardness = Column("Hardness", Float)
-    solids = Column("Solids", Float)
-    chloramines = Column("Chloramines", Float)
-    sulfate = Column("Sulfate", Float)
-    conductivity = Column("Conductivity", Float)
-    organic_carbon = Column("Organic_carbon", Float)
-    trihalomethanes = Column("Trihalomethanes", Float)
-    turbidity = Column("Turbidity", Float)
-    potability = Column("Potability", Integer, nullable=True)
+    name = Column(String(140), nullable=False)
+    ph = Column(Float)
+    hardness = Column(Float)
+    solids = Column(Float)
+    chloramines = Column(Float)
+    sulfate = Column(Float)
+    conductivity = Column(Float)
+    organic_carbon = Column(Float)
+    trihalomethanes = Column(Float)
+    turbidity = Column(Float)
+    potability = Column(Integer, nullable=True)
     data_insercao = Column(DateTime, default=datetime.now())
     
-    def __init__(self, name:str, ph:float, hardness:float, solids:float, chloramines:str,
+    def __init__(self, name:str, ph:float, hardness:float, solids:float, chloramines:float,
                  sulfate:float, conductivity:float, organic_carbon:float, 
-                 trihalomethanes:float, turbidity:float, potability:int, 
-                 data_insercao:Union[DateTime, None] = None):
+                 trihalomethanes:float, turbidity:float, potability:int):
         """
         Cria uma água
 
         Arguments:
             name: nome da água
-            ph = Column("ph", Float)
+            ph = pH
             hardness = Dureza
             solids = Sólidos
             chloramines = Cloraminas
@@ -54,8 +53,8 @@ class Agua(Base):
         self.trihalomethanes = trihalomethanes
         self.turbidity = turbidity
         self.potability = potability
-        self.data_insercao = Column(DateTime, default=datetime.now())
+        #self.data_insercao = Column(DateTime, default=datetime.now())
 
         # se não for informada, será o data exata da inserção no banco
-        if data_insercao:
-            self.data_insercao = data_insercao
+        #if data_insercao:
+            #self.data_insercao = data_insercao

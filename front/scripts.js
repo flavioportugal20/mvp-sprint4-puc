@@ -75,8 +75,8 @@ const getListAgua = async () => {
 		  alert(data.message);
 		  return;
 	  }
-      data.aguas.forEach(item => insertListAgua(item.id, item.name, item.ph, item.hardness, item.solids, item.chloramines, item.sulfate, item.conductivity, item.organic_carbon, item.trihalomethanes, item.turbidity, item.potability))
-      getCountAguaBloqueados();
+      data.aguas.forEach(item => insertListAgua(item.id, item.name, item.ph, item.hardness, item.solids, item.chloramines, item.sulfate, item.conductivity, item.organic_carbon, item.trihalomethanes, item.turbidity, item.data_insercao, item.potability))
+      //getCountAguaBloqueados();
     })
     .catch((error) => {
       alert(error);
@@ -121,7 +121,8 @@ const getAgua = async (idAgua) => {
 
 const postItemAgua = async (inputName, 
 								 inputPh, 
-								 inputHardness, 
+								 inputHardness,
+								 inputSolids,
 								 inputChloramines, 
 								 inputSulfate,
 								 inputConductivity, 
@@ -132,6 +133,7 @@ const postItemAgua = async (inputName,
   formData.append('name', inputName);
   formData.append('ph', inputPh);
   formData.append('hardness', inputHardness);
+  formData.append('solids', inputSolids);
   formData.append('chloramines', inputChloramines);
   formData.append('sulfate', inputSulfate);
   formData.append('conductivity', inputConductivity);
@@ -164,6 +166,7 @@ const putItemAgua = async (idAgua,
 								inputName, 
 								inputPh, 
 								inputHardness, 
+								inputSolids,
 								inputChloramines, 
 								inputSulfate,
 								inputConductivity, 
@@ -176,6 +179,7 @@ const putItemAgua = async (idAgua,
   formData.append('name', inputName);
   formData.append('ph', inputPh);
   formData.append('hardness', inputHardness);
+  formData.append('solids', inputSolids);
   formData.append('chloramines', inputChloramines);
   formData.append('sulfate', inputSulfate);
   formData.append('conductivity', inputConductivity);
@@ -229,7 +233,7 @@ const deleteItemAgua = (item) => {
   })
     .then((response) => response.json())
     .then((data) => {
-      alert("Agua removido com suscesso!");
+      alert("Água removida com suscesso!");
       closeModal('dv-modal-agua-cadastro');
       getListAgua();    
     })
@@ -276,58 +280,24 @@ const insertButtonEditAgua = (parent, id) => {
   }
 }
 
-/*
-  --------------------------------------------------------------------------------------
-  Função para criar um botão para abrir a cadastro acesso de acordo com o item da lista de agua
-  --------------------------------------------------------------------------------------
-*/
-const insertButtonAcessoAgua = (parent, id, hardness) => {
-  parent.className = "colunaCenter";
-  let span = document.createElement("span");
-  span.className = "acesso"
-  if(hardness.toUpperCase() != 'ATIVO'){
-    span.className = "acesso disabled";
-  }
-
-  span.innerHTML = '<img src="img/acesso.png" width="24px" height="24px"></img>';
-  parent.appendChild(span);
-  if(hardness.toUpperCase() == 'ATIVO'){
-    span.onclick = function () {
-      let colId = document.getElementById("col"+id);
-      let linha = colId.parentElement;
-      document.getElementById("idAguaAcesso").value = linha.children[0].innerHTML;
-      document.getElementById("nameAgua").value = linha.children[1].innerHTML;
-      document.getElementById("phAguaAcesso").value = linha.children[2].innerHTML;
-      document.getElementById("localAcesso").value = "";
-      document.getElementById("tipoAcesso").value = "VISITA";
-      document.getElementById("obsAcesso").value = "";
-      document.getElementById("labelDataAcesso").style.display = "none";
-      let inputDataAcesso = document.getElementById("inputDataAcesso");
-      inputDataAcesso.style.display = "none";
-      let btnSalvar = document.getElementById("btnSalvarAcesso");
-      btnSalvar.style.display = "block";
-      openModal('dv-modal-acesso-cadastro');
-    }
-  }
-}
 
 /*
   --------------------------------------------------------------------------------------
   Função para um badge do hardness do item da lista de agua
   --------------------------------------------------------------------------------------
 */
-const insertStatusAgua = (parent, texto) => {
+const insertPotabilidadeAgua = (parent, texto) => {
   parent.className = "colunaCenter";
   let span = document.createElement("span");
-  if(texto == "Ativo"){
+  if(texto == 1){
     span.className = "badge badge-verde";
-  } else if(texto == "Inativo" || texto == "Bloqueado"){
-    span.className = "badge badge-vermelho";
+	span.innerHTML = "Potável";
   } else {
-    span.className = "badge";
+    span.className = "badge badge-vermelho";
+	span.innerHTML = "Não Potável";
   }
   
-  span.innerHTML = texto;
+  
   parent.appendChild(span);
 }
 
@@ -337,7 +307,7 @@ const insertStatusAgua = (parent, texto) => {
   --------------------------------------------------------------------------------------
 */
 const cadastrarNovoRegistroAgua = () => {
-  limparFormAgua();
+  //limparFormAgua();
 	showBtnSalvarAgua();  
   openModal('dv-modal-agua-cadastro');
 }
@@ -361,15 +331,55 @@ const validarFormAgua = () => {
 		
   let inputName = document.getElementById("name").value;
   let inputPh = document.getElementById("ph").value;
- 
+  let inputHardness = document.getElementById("hardness").value;
+  let inputSolids = document.getElementById("solids").value;
+  let inputChloramines = document.getElementById("chloramines").value;
+  let inputSulfate = document.getElementById("sulfate").value;
+  let inputConductivity = document.getElementById("conductivity").value;
+  let inputOrganicCarbon = document.getElementById("organic_carbon").value;
+  let inputTrihalomethanes = document.getElementById("trihalomethanes").value;
+  let inputTurbidity = document.getElementById("turbidity").value;
+  
   if (inputName === '') {
-    alert("Escreva o name do agua!");
-	  return false;
+    alert("Escreva o NOME da agua!");
+	return false;
   } 
   if (inputPh === '') {
-    alert("O campo CPF é obrigatório!");
-	  return false;
+    alert("O campo PH é obrigatório!");
+	return false;
   } 
+  if (inputHardness === '') {
+    alert("O campo Dureza é obrigatório!");
+	return false;
+  }
+  if (inputSolids === '') {
+    alert("O campo Sólidos é obrigatório!");
+	return false;
+  }
+  if (inputChloramines === '') {
+    alert("O campo Cloraminas é obrigatório!");
+	return false;
+  }
+  if (inputSulfate === '') {
+    alert("O campo Sulfato é obrigatório!");
+	return false;
+  }
+  if (inputConductivity === '') {
+    alert("O campo Condutividade é obrigatório!");
+	return false;
+  }
+  if (inputOrganicCarbon === '') {
+    alert("O campo Carbono Orgânico é obrigatório!");
+	return false;
+  }
+  if (inputTrihalomethanes === '') {
+    alert("O campo Trihalometanos é obrigatório!");
+	return false;
+  }
+  if (inputTurbidity === '') {
+    alert("O campo Turbidez é obrigatório!");
+	return false;
+  }
   return true;
 }
 
@@ -385,6 +395,7 @@ const salvarAgua = () => {
   let inputName = document.getElementById("name").value;
   let inputPh = document.getElementById("ph").value;
   let inputHardness = document.getElementById("hardness").value;
+  let inputSolids = document.getElementById("solids").value;
   let inputChloramines = document.getElementById("chloramines").value;
   let inputSulfate = document.getElementById("sulfate").value;
   let inputConductivity = document.getElementById("conductivity").value;
@@ -395,14 +406,15 @@ const salvarAgua = () => {
   if (confirm("Você tem certeza deseja salvar?")) {
     postItemAgua(inputName, 
 					  inputPh, 
-					  inputHardness.val(), 
+					  inputHardness,
+					  inputSolids,					  
 					  inputChloramines, 
 					  inputSulfate,
 					  inputConductivity, 
 					  inputOrganicCarbon, 
 					  inputTrihalomethanes, 
 					  inputTurbidity)
-    alert("Item salvo com sucesso!")
+    alert("Água salva com sucesso!")
     limparFormAgua();
 	  return
   }	
@@ -419,6 +431,7 @@ const editarAgua = () => {
   let inputName = document.getElementById("name").value;
   let inputPh = document.getElementById("ph").value;
   let inputHardness = document.getElementById("hardness").value;
+  let inputSolids = document.getElementById("solids").value;
   let inputChloramines = document.getElementById("chloramines").value;
   let inputSulfate = document.getElementById("sulfate").value;
   let inputConductivity = document.getElementById("conductivity").value;
@@ -430,7 +443,8 @@ const editarAgua = () => {
 	  putItemAgua(idAgua, 
 					   inputName, 
 					   inputPh, 
-					   inputHardness.val(), 
+					   inputHardness, 
+					   inputSolids,
 					   inputChloramines,
 					   inputSulfate,
 					   inputConductivity, 
@@ -447,24 +461,26 @@ const editarAgua = () => {
   Função para inserir items na lista de agua apresentada
   --------------------------------------------------------------------------------------
 */
-const insertListAgua = (id, name, ph, hardness, data_criacao) => {
-  var item = [id, name, ph, data_criacao]
+const insertListAgua = (id, name, ph, hardness, solids, chloramines, sulfate, conductivity, organicCarbon, trihalomethanes, turbidity, data_insercao, potability) => {
+  var item = [id, name, ph, hardness, solids, chloramines, sulfate, conductivity, organicCarbon, trihalomethanes, turbidity, data_insercao, potability]
   var table = document.getElementById('tabela-agua');
   var row = table.insertRow();
 
   for (var i = 0; i < item.length; i++) {
-    var cel = row.insertCell(i);	
-    cel.textContent = item[i];
-    if(i == 0){//ID
-      cel.id = "col"+item[i];
-    }
+	if(i != 12){
+		var cel = row.insertCell(i);	
+		cel.textContent = item[i];
+		if(i == 0){//ID
+		  cel.id = "col"+item[i];
+		}
 
-    if(i == 3){//data criacao
-      cel.className = "colunaCenter";
-    }
+		if(i == 11){//data_insercao
+		  cel.className = "colunaCenter";
+		}
+	}
     
   }
-  insertStatusAgua(row.insertCell(-1), hardness)
+  insertPotabilidadeAgua(row.insertCell(-1), potability)
   insertButtonEditAgua(row.insertCell(-1), item[0])
   insertButtonRemoveAgua(row.insertCell(-1), item[0]) 
 }
@@ -502,7 +518,8 @@ const showBtnEditarAgua = () => {
 const limparFormAgua = () => {
   document.getElementById("name").value = "";
   document.getElementById("ph").value = "";
-  document.getElementById("hardness").value = "ATIVO";
+  document.getElementById("hardness").value = "";
+  document.getElementById("solids").value = "";
   document.getElementById("idAgua").value = "";
   document.getElementById("chloramines").value = "";
   document.getElementById("sulfate").value = "";

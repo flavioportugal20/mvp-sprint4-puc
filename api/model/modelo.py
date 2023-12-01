@@ -19,14 +19,15 @@ class Model:
     def preditor(model, form):
         """Realiza a predição de um agua com base no modelo treinado
         """
-        X_input = np.array([form.preg, 
-                            form.plas, 
-                            form.pres, 
-                            form.skin, 
-                            form.test, 
-                            form.mass, 
-                            form.pedi, 
-                            form.age
+        X_input = np.array([form.ph, 
+                            form.hardness, 
+                            form.solids, 
+                            form.chloramines, 
+                            form.sulfate, 
+                            form.conductivity, 
+                            form.organic_carbon, 
+                            form.trihalomethanes,
+                            form.turbidity
                         ])
         # Faremos o reshape para que o modelo entenda que estamos passando
         diagnosis = model.predict(X_input.reshape(1, -1))
