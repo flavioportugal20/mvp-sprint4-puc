@@ -1,6 +1,8 @@
 import numpy as np
 import pickle
 import joblib
+from logger import logger
+from sklearn.preprocessing import StandardScaler
 
 class Model:
     
@@ -29,6 +31,12 @@ class Model:
                             form.trihalomethanes,
                             form.turbidity
                         ])
+
+        #teste = X_input.reshape(1, -1)
+        #rescaledEntradaX = StandardScaler().transform(teste)
+
         # Faremos o reshape para que o modelo entenda que estamos passando
         diagnosis = model.predict(X_input.reshape(1, -1))
+        #diagnosis = model.predict(rescaledEntradaX)
+        logger.warning(f"diagnosis ############'{diagnosis}'")
         return int(diagnosis[0])

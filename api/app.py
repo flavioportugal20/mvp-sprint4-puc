@@ -88,10 +88,16 @@ def predict(form: AguaSchema):
         dict: representação da água e sua potabilidade
     """
     
-    # Carregando modelo
-    ml_path = 'ml_model/water_potability.pkl'
-    modelo = Model.carrega_modelo(ml_path)
-    
+    try:
+        # Carregando modelo
+        ml_path = 'ml_model/water_potability.pkl'
+        modelo = Model.carrega_modelo(ml_path)
+        potability=Model.preditor(modelo, form)
+        logger.warning(f"Potabilidade '{potability}'")
+    except Exception as e:
+        logger.warning(f"Erro no modelo '{e}'")
+        return {"message": 'Erro no modelo'}, 400
+
     agua = Agua(
         name=form.name.strip(),
         ph=form.ph,
@@ -103,8 +109,7 @@ def predict(form: AguaSchema):
         organic_carbon=form.organic_carbon,
         trihalomethanes=form.trihalomethanes,
         turbidity=form.turbidity,
-        #potability=1
-        potability=Model.preditor(modelo, form)
+        potability=potability
     )
     logger.debug(f"Adicionando água de nome:'{form.name}'")
 
@@ -157,11 +162,16 @@ def predictUpdate(form: AguaSchemaUpdate):
         dict: representação da água e sua potabilidade
     """
     
-    # Carregando modelo
-    ml_path = 'ml_model/water_potability.pkl'
-    modelo = Model.carrega_modelo(ml_path)
-    
-    
+    try:
+        # Carregando modelo
+        ml_path = 'ml_model/water_potability.pkl'
+        modelo = Model.carrega_modelo(ml_path)
+        potability=Model.preditor(modelo, form)
+        logger.warning(f"Potabilidade '{potability}'")
+    except Exception as e:
+        logger.warning(f"Erro no modelo '{e}'")
+        return {"message": 'Erro no modelo'}, 400
+
     logger.debug(f"Atualizando água de nome:'{form.name}'")
     session = Session()
 
@@ -177,7 +187,7 @@ def predictUpdate(form: AguaSchemaUpdate):
             logger.debug(f"Água econtrada: '{agua.name}'")
 
             agua.name=form.name.strip()         
-            agua.ph=0.63
+            agua.ph=form.ph
             agua.hardness=form.hardness
             agua.solids=form.solids
             agua.chloramines=form.chloramines
@@ -186,7 +196,6 @@ def predictUpdate(form: AguaSchemaUpdate):
             agua.organic_carbon=form.organic_carbon
             agua.trihalomethanes=form.trihalomethanes
             agua.turbidity=form.turbidity
-            #agua.potability=1
             agua.potability=Model.preditor(modelo, form)
             
             # retorna a representação de água

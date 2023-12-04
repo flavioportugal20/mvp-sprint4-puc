@@ -1,58 +1,16 @@
-[2023-12-01 09:21:47,593] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-01 15:29:53,409] INFO _log() L96   [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on all addresses (0.0.0.0)
- * Running on http://127.0.0.1:5000
- * Running on http://192.168.1.12:5000 - call_trace=C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-01 15:29:53,428] INFO _log() L96   [33mPress CTRL+C to quit[0m - call_trace=C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-01 15:29:53,465] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-01 15:30:29,218] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 15:30:29] "GET /aguas HTTP/1.1" 200 - - call_trace=C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-01 15:30:29,218] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 15:30:29] "GET /aguas HTTP/1.1" 200 - - call_trace=C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-01 15:40:46,354] INFO _log() L96   [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on all addresses (0.0.0.0)
- * Running on http://127.0.0.1:5000
- * Running on http://192.168.1.12:5000 - call_trace=C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-01 15:40:46,394] INFO _log() L96   [33mPress CTRL+C to quit[0m - call_trace=C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-01 15:40:46,464] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-01 15:41:21,961] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 15:41:21] "[32mGET / HTTP/1.1[0m" 302 - - call_trace=C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-01 15:41:22,012] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 15:41:22] "[32mGET /openapi HTTP/1.1[0m" 308 - - call_trace=C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-01 15:41:22,137] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 15:41:22] "GET /openapi/ HTTP/1.1" 200 - - call_trace=C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-01 15:41:24,167] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 15:41:24] "[36mGET /openapi/static/images/rapidoc.svg HTTP/1.1[0m" 304 - - call_trace=C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-01 15:41:24,205] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 15:41:24] "[36mGET /openapi/static/images/redoc.svg HTTP/1.1[0m" 304 - - call_trace=C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-01 15:41:24,508] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 15:41:24] "[36mGET /openapi/static/images/swagger.svg HTTP/1.1[0m" 304 - - call_trace=C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-01 15:41:24,575] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 15:41:24] "GET /openapi/static/images/apidoc.svg HTTP/1.1" 200 - - call_trace=C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-04 08:30:47,919] INFO _log() L96   [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on all addresses (0.0.0.0)
- * Running on http://127.0.0.1:5000
- * Running on http://192.168.1.12:5000 - call_trace=C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-04 08:30:47,922] INFO _log() L96   [33mPress CTRL+C to quit[0m - call_trace=C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-04 08:30:47,936] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-04 08:31:51,800] INFO _log() L96   127.0.0.1 - - [04/Dec/2023 08:31:51] "GET /aguas HTTP/1.1" 200 - - call_trace=C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-04 08:31:59,711] INFO _log() L96   127.0.0.1 - - [04/Dec/2023 08:31:59] "OPTIONS /agua?id=2 HTTP/1.1" 200 - - call_trace=C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-04 08:31:59,746] INFO _log() L96   127.0.0.1 - - [04/Dec/2023 08:31:59] "DELETE /agua?id=2 HTTP/1.1" 200 - - call_trace=C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-04 08:32:01,574] INFO _log() L96   127.0.0.1 - - [04/Dec/2023 08:32:01] "GET /aguas HTTP/1.1" 200 - - call_trace=C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-04 08:32:05,030] INFO _log() L96   127.0.0.1 - - [04/Dec/2023 08:32:05] "GET /agua?id=3 HTTP/1.1" 200 - - call_trace=C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-04 08:32:09,025] INFO _log() L96   127.0.0.1 - - [04/Dec/2023 08:32:09] "OPTIONS /agua HTTP/1.1" 200 - - call_trace=C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-04 08:32:12,095] ERROR log_exception() L825  Exception on /agua [PUT] - call_trace=C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\flask\app.py L825 
-Traceback (most recent call last):
-  File "C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\flask\app.py", line 1455, in wsgi_app
-    response = self.full_dispatch_request()
-  File "C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\flask\app.py", line 869, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
-    return cors_after_request(app.make_response(f(*args, **kwargs)))
-  File "C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\flask\app.py", line 867, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\flask\app.py", line 852, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\flask_openapi3\scaffold.py", line 117, in view_func
-    response = func(**func_kwargs)
-  File "C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\app.py", line 162, in predictUpdate
-    modelo = Model.carrega_modelo(ml_path)
-  File "C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\model\modelo.py", line 12, in carrega_modelo
-    model = pickle.load(open(path, 'rb'))
-  File "sklearn\tree\_tree.pyx", line 728, in sklearn.tree._tree.Tree.__setstate__
-  File "sklearn\tree\_tree.pyx", line 1434, in sklearn.tree._tree._check_node_ndarray
-ValueError: node array from the pickle has an incompatible dtype:
-- expected: {'names': ['left_child', 'right_child', 'feature', 'threshold', 'impurity', 'n_node_samples', 'weighted_n_node_samples', 'missing_go_to_left'], 'formats': ['<i8', '<i8', '<i8', '<f8', '<f8', '<i8', '<f8', 'u1'], 'offsets': [0, 8, 16, 24, 32, 40, 48, 56], 'itemsize': 64}
-- got     : [('left_child', '<i8'), ('right_child', '<i8'), ('feature', '<i8'), ('threshold', '<f8'), ('impurity', '<f8'), ('n_node_samples', '<i8'), ('weighted_n_node_samples', '<f8')]
-[2023-12-04 08:32:12,120] INFO _log() L96   127.0.0.1 - - [04/Dec/2023 08:32:12] "[35m[1mPUT /agua HTTP/1.1[0m" 500 - - call_trace=C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-04 13:56:19,575] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-04 13:56:39,471] INFO _log() L96   127.0.0.1 - - [04/Dec/2023 13:56:39] "GET /agua?id=5 HTTP/1.1" 200 - - call_trace=C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-04 13:56:42,694] INFO _log() L96   127.0.0.1 - - [04/Dec/2023 13:56:42] "OPTIONS /agua HTTP/1.1" 200 - - call_trace=C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-04 13:56:44,134] WARNING predictUpdate() L172  Erro no modelo 'This StandardScaler instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator.' - call_trace=C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\app.py L172 
+[2023-12-04 13:56:44,193] INFO _log() L96   127.0.0.1 - - [04/Dec/2023 13:56:44] "[31m[1mPUT /agua HTTP/1.1[0m" 400 - - call_trace=C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-04 13:56:45,389] INFO _log() L96   127.0.0.1 - - [04/Dec/2023 13:56:45] "GET /aguas HTTP/1.1" 200 - - call_trace=C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-04 14:10:07,269] INFO _log() L96    * Detected change in 'C:\\Users\\Flavio\\Documents\\projeto-puc-rio\\projeto-mvp-sprint4\\api\\model\\modelo.py', reloading - call_trace=C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-04 14:10:08,799] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-04 14:10:28,374] INFO _log() L96   127.0.0.1 - - [04/Dec/2023 14:10:28] "GET /agua?id=3 HTTP/1.1" 200 - - call_trace=C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-04 14:10:28,405] INFO _log() L96   127.0.0.1 - - [04/Dec/2023 14:10:28] "GET /agua?id=3 HTTP/1.1" 200 - - call_trace=C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-04 14:11:33,880] INFO _log() L96   127.0.0.1 - - [04/Dec/2023 14:11:33] "OPTIONS /agua HTTP/1.1" 200 - - call_trace=C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-04 14:11:35,558] WARNING preditor() L41   diagnosis ############'[1.]' - call_trace=C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\model\modelo.py L41  
+[2023-12-04 14:11:35,561] WARNING predictUpdate() L170  Potabilidade '1' - call_trace=C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\app.py L170 
+[2023-12-04 14:11:35,806] WARNING preditor() L41   diagnosis ############'[1.]' - call_trace=C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\model\modelo.py L41  
+[2023-12-04 14:11:35,890] INFO _log() L96   127.0.0.1 - - [04/Dec/2023 14:11:35] "PUT /agua HTTP/1.1" 200 - - call_trace=C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-04 14:11:37,410] INFO _log() L96   127.0.0.1 - - [04/Dec/2023 14:11:37] "GET /aguas HTTP/1.1" 200 - - call_trace=C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\werkzeug\_internal.py L96  

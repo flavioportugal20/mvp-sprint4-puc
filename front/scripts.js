@@ -75,7 +75,7 @@ const getListAgua = async () => {
 		  alert(data.message);
 		  return;
 	  }
-      data.aguas.forEach(item => insertListAgua(item.id, item.name, item.ph, item.hardness, item.solids, item.chloramines, item.sulfate, item.conductivity, item.organic_carbon, item.trihalomethanes, item.turbidity, item.data_insercao, item.potability))
+      data.aguas.forEach(item => insertListAgua(item.id, item.name, item.ph, item.hardness, item.solids, item.chloramines, item.sulfate, item.conductivity, item.organic_carbon, item.trihalomethanes, item.turbidity, item.potability))
       //getCountAguaBloqueados();
     })
     .catch((error) => {
@@ -442,16 +442,16 @@ const editarAgua = () => {
  
   if (confirm("Você tem certeza deseja editar?")) {
 	  putItemAgua(idAgua, 
-					   inputName, 
-					   inputPh, 
-					   inputHardness, 
-					   inputSolids,
-					   inputChloramines,
-					   inputSulfate,
-					   inputConductivity, 
-					   inputOrganicCarbon, 
-					   inputTrihalomethanes, 
-					   inputTurbidity)
+				   inputName, 
+				   inputPh, 
+				   inputHardness, 
+				   inputSolids,
+				   inputChloramines,
+				   inputSulfate,
+				   inputConductivity, 
+				   inputOrganicCarbon, 
+				   inputTrihalomethanes, 
+				   inputTurbidity)
 	  return
   }
 }
@@ -461,22 +461,22 @@ const editarAgua = () => {
   Função para inserir items na lista de agua apresentada
   --------------------------------------------------------------------------------------
 */
-const insertListAgua = (id, name, ph, hardness, solids, chloramines, sulfate, conductivity, organicCarbon, trihalomethanes, turbidity, data_insercao, potability) => {
-  var item = [id, name, ph, hardness, solids, chloramines, sulfate, conductivity, organicCarbon, trihalomethanes, turbidity, data_insercao, potability]
+const insertListAgua = (id, name, ph, hardness, solids, chloramines, sulfate, conductivity, organicCarbon, trihalomethanes, turbidity, potability) => {
+  var item = [id, name, ph, hardness, solids, chloramines, sulfate, conductivity, organicCarbon, trihalomethanes, turbidity, potability]
   var table = document.getElementById('tabela-agua');
   var row = table.insertRow();
 
   for (var i = 0; i < item.length; i++) {
-	if(i != 12){
+	if(i != 11){
 		var cel = row.insertCell(i);	
 		cel.textContent = item[i];
 		if(i == 0){//ID
 		  cel.id = "col"+item[i];
 		}
 
-		if(i == 11){//data_insercao
-		  cel.className = "colunaCenter";
-		}
+		//if(i == 11){//data_insercao
+		//  cel.className = "colunaCenter";
+		//}
 	}
     
   }
