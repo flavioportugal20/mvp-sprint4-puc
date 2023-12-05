@@ -53,7 +53,7 @@ class AguaViewSchema(BaseModel):
     
 class AguaBuscaSchema(BaseModel):
     """Define como deve ser a estrutura que representa a busca.
-    Ela será feita com base no nome da água.
+    Ela será feita com base no ID.
     """
     id: int = 1
 

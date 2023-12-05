@@ -32,11 +32,9 @@ class Model:
                             form.turbidity
                         ])
 
-        #teste = X_input.reshape(1, -1)
-        #rescaledEntradaX = StandardScaler().transform(teste)
+        X_input = X_input.reshape(1, -1)
+        rescaledEntradaX =  model.scaler.transform(X_input)
 
         # Faremos o reshape para que o modelo entenda que estamos passando
-        diagnosis = model.predict(X_input.reshape(1, -1))
-        #diagnosis = model.predict(rescaledEntradaX)
-        logger.warning(f"diagnosis ############'{diagnosis}'")
+        diagnosis = model.predict(rescaledEntradaX)
         return int(diagnosis[0])

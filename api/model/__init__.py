@@ -7,6 +7,10 @@ import os
 from model.base import Base
 from model.agua import Agua
 from model.modelo import Model
+import test.test_modelos as teste
+
+# Inicia os testes do modelo
+teste.test_modelo()
 
 db_path = "database/"
 # Verifica se o diretorio não existe

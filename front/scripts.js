@@ -76,7 +76,9 @@ const getListAgua = async () => {
 		  return;
 	  }
       data.aguas.forEach(item => insertListAgua(item.id, item.name, item.ph, item.hardness, item.solids, item.chloramines, item.sulfate, item.conductivity, item.organic_carbon, item.trihalomethanes, item.turbidity, item.potability))
-      //getCountAguaBloqueados();
+      getCountAgua();
+	  getCountAguaPotavel();
+	  getCountAguaNaoPotavel();
     })
     .catch((error) => {
       alert(error);
@@ -257,7 +259,7 @@ const insertButtonRemoveAgua = (parent, id) => {
   parent.appendChild(span);
   span.onclick = function () {
     let div = this.parentElement.parentElement;
-    if (confirm("Você tem certeza?")) {
+    if (confirm("Você tem certeza deseja remover o cadastro com ID "+ id +"?")) {
 	    deleteItemAgua(id)
     }
   }
@@ -473,10 +475,6 @@ const insertListAgua = (id, name, ph, hardness, solids, chloramines, sulfate, co
 		if(i == 0){//ID
 		  cel.id = "col"+item[i];
 		}
-
-		//if(i == 11){//data_insercao
-		//  cel.className = "colunaCenter";
-		//}
 	}
     
   }
@@ -530,7 +528,62 @@ const limparFormAgua = () => {
   document.getElementById("turbidity").value = "";
 }
 
+/*
+  --------------------------------------------------------------------------------------
+  Função para obter a quantidade de águas existente no servidor via requisição GET
+  --------------------------------------------------------------------------------------
+*/
+const getCountAgua = async () => {
+  let url = 'http://127.0.0.1:5000/aguas/total';
+  fetch(url, {
+    method: 'get',
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      document.getElementById("countAgua").innerHTML = data.count;
+    })
+    .catch((error) => {
+      alert(error);
+    });
+}
 
+/*
+  --------------------------------------------------------------------------------------
+  Função para obter a quantidade de águas potáveis existente no servidor via requisição GET
+  --------------------------------------------------------------------------------------
+*/
+const getCountAguaPotavel = async () => {
+  let url = 'http://127.0.0.1:5000/aguas/total/potaveis';
+  fetch(url, {
+    method: 'get',
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      document.getElementById("countAguaPotavel").innerHTML = data.count;
+    })
+    .catch((error) => {
+      alert(error);
+    });
+}
+
+/*
+  --------------------------------------------------------------------------------------
+  Função para obter a quantidade de águas não potáveis existente no servidor via requisição GET
+  --------------------------------------------------------------------------------------
+*/
+const getCountAguaNaoPotavel = async () => {
+  let url = 'http://127.0.0.1:5000/aguas/total/naopotaveis';
+  fetch(url, {
+    method: 'get',
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      document.getElementById("countAguaNaoPotavel").innerHTML = data.count;
+    })
+    .catch((error) => {
+      alert(error);
+    });
+}
 
 /*
   --------------------------------------------------------------------------------------
@@ -540,42 +593,9 @@ const limparFormAgua = () => {
 
 /*
   --------------------------------------------------------------------------------------
-  Funções Acesso
-  --------------------------------------------------------------------------------------
-*/
-
-/*
-  --------------------------------------------------------------------------------------
-  Função para obter a quantidade de acessos existente no servidor via requisição GET
-  --------------------------------------------------------------------------------------
-*/
-const getCountAcesso = async () => {
-  let url = 'http://127.0.0.1:5000/acesso/lista/count';
-  fetch(url, {
-    method: 'get',
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      document.getElementById("countAcesso").innerHTML = data.count;
-    })
-    .catch((error) => {
-      alert(error);
-    });
-}
-
-/*
-  --------------------------------------------------------------------------------------
-  Fim Funções Acesso
-  --------------------------------------------------------------------------------------
-*/
-
-/*
-  --------------------------------------------------------------------------------------
   Chamada das funções para carregamento inicial dos dados
   --------------------------------------------------------------------------------------
 */
-//getListStatusAgua();
-//showBtnSalvarAgua();
 getListAgua();
 
 

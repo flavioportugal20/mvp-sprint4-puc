@@ -29,7 +29,7 @@ header {
     background-image: url("img/banner.jpg");
     background-size: 100% 350px;
     background-repeat: no-repeat;
-    padding: 30px 40px;
+    padding: 0 20px;
     color: white;
     display: flex;
     justify-content: center;
@@ -207,17 +207,18 @@ tr:nth-child(1):hover{
 }
 
 .small-box .inner {
-    padding: 10px;
+    /*padding: 10px;*/
 }
 
 .small-box p {
-    font-size: 16px;
+    font-size: 15px;
+	font-weight: 700;
 }
 
 .small-box h3 {
     font-size: 30px;
     font-weight: bold;
-    margin: 0 0 10px 0;
+    margin: 0;
     white-space: nowrap;
     padding-top: 10px;
 }
@@ -248,10 +249,12 @@ tr:nth-child(1):hover{
     padding: 20px 0 0 20px;
 }
 
-
+.bg-azul {
+    background-color: #83aaff;
+}
 
 .bg-green {
-    background-color: #14ca76;;
+    background-color: #63d369;
 }
 
 .bg-yellow {
@@ -259,11 +262,11 @@ tr:nth-child(1):hover{
 }
 
 .bg-red {
-    background-color: #ce5547;
+    background-color: #df6e6e;
 }
 
 .small-box ion-icon {
-    font-size: 80px;
+    font-size: 65px;
 }
 
 input[type=text], select, textarea {

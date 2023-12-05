@@ -53,8 +53,3 @@ class Agua(Base):
         self.trihalomethanes = trihalomethanes
         self.turbidity = turbidity
         self.potability = potability
-        #self.data_insercao = Column(DateTime, default=datetime.now())
-
-        # se não for informada, será o data exata da inserção no banco
-        #if data_insercao:
-            #self.data_insercao = data_insercao

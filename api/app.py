@@ -246,7 +246,7 @@ def get_agua(query: AguaBuscaSchema):
 @app.delete('/agua', tags=[agua_tag],
             responses={"200": AguaViewSchema, "404": ErrorSchema})
 def delete_agua(query: AguaBuscaSchema):
-    """Remove uma água cadastrada na base a partir do nome
+    """Remove uma água cadastrada na base a partir do ID
 
     Args:
         id (int): ID da água
@@ -273,3 +273,66 @@ def delete_agua(query: AguaBuscaSchema):
         session.commit()
         logger.debug(f"Deletada água #{agua.name}")
         return {"message": f"Água {agua.name} removida com sucesso!"}, 200
+
+
+@app.get('/aguas/total', tags=[agua_tag],
+         responses={"200": AguaViewSchema, "404": ErrorSchema})
+def get_agua_total():
+    """
+        Retorna a quantidade de águas cadastradas
+    """
+    # criando conexão com a base
+    session = Session()
+    # fazendo a busca
+    total = session.query(Agua).count()
+    session.commit()
+
+    if total and total >= 0:
+        # retorna a quantidade de águas cadastradas
+        logger.debug(f"Quantidade de águas cadastradas #{total}")
+        return {"count": total}
+    else:
+        logger.debug(f"Erro ao retornar a quantidade de águas cadastradas")
+        return {"message": "Erro ao retornar a quantidade de águas cadastradas", "count": total}
+    
+
+@app.get('/aguas/total/potaveis', tags=[agua_tag],
+         responses={"200": AguaViewSchema, "404": ErrorSchema})
+def get_agua_total_potavel():
+    """
+        Retorna a quantidade de águas potáveis cadastradas
+    """
+    # criando conexão com a base
+    session = Session()
+    # fazendo a busca
+    total = session.query(Agua).filter(Agua.potability == 1).count()
+    session.commit()
+
+    if total and total >= 0:
+        # retorna a quantidade de águas cadastradas
+        logger.debug(f"Quantidade de águas potáveis cadastradas #{total}")
+        return {"count": total}
+    else:
+        logger.debug(f"Erro ao retornar a quantidade de águas potáveis cadastradas")
+        return {"message": "Erro ao retornar a quantidade de águas potáveis cadastradas", "count": total}
+
+@app.get('/aguas/total/naopotaveis', tags=[agua_tag],
+         responses={"200": AguaViewSchema, "404": ErrorSchema})
+def get_agua_total_nao_potavel():
+    """
+        Retorna a quantidade de águas não potáveis cadastradas
+    """
+    # criando conexão com a base
+    session = Session()
+    # fazendo a busca
+    total = session.query(Agua).filter(Agua.potability == 0).count()
+    session.commit()
+
+    if total and total >= 0:
+        # retorna a quantidade de águas cadastradas
+        logger.debug(f"Quantidade de águas não potáveis cadastradas #{total}")
+        return {"count": total}
+    else:
+        logger.debug(f"Erro ao retornar a quantidade de águas não potáveis cadastradas")
+        return {"message": "Erro ao retornar a quantidade de águas não potáveis cadastradas", "count": total}
+

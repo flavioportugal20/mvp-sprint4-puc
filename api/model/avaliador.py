@@ -6,7 +6,8 @@ class Avaliador:
         """ Faz uma predição e avalia o modelo. Poderia parametrizar o tipo de
         avaliação, entre outros.
         """
-        predicoes = modelo.predict(X_test)
+        rescaledX_test = modelo.scaler.transform(X_test)
+        predicoes = modelo.predict(rescaledX_test)
         return (accuracy_score(Y_test, predicoes),
                 recall_score(Y_test, predicoes),
                 precision_score(Y_test, predicoes),
