@@ -3,3 +3,10 @@
 [2023-12-05 15:43:33,324] INFO _log() L96   127.0.0.1 - - [05/Dec/2023 15:43:33] "GET /aguas/total HTTP/1.1" 200 - - call_trace=C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\werkzeug\_internal.py L96  
 [2023-12-05 15:43:33,324] INFO _log() L96   127.0.0.1 - - [05/Dec/2023 15:43:33] "GET /aguas/total/potaveis HTTP/1.1" 200 - - call_trace=C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\werkzeug\_internal.py L96  
 [2023-12-05 15:43:33,324] INFO _log() L96   127.0.0.1 - - [05/Dec/2023 15:43:33] "GET /aguas/total/naopotaveis HTTP/1.1" 200 - - call_trace=C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-06 01:00:29,823] INFO _log() L96   [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.12:5000 - call_trace=C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-06 01:00:29,823] INFO _log() L96   [33mPress CTRL+C to quit[0m - call_trace=C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-06 01:00:29,823] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-06 01:05:58,312] INFO _log() L96    * Detected change in 'C:\\Users\\Flavio\\Documents\\projeto-puc-rio\\projeto-mvp-sprint4\\api\\test\\test_modelos.py', reloading - call_trace=C:\Users\Flavio\Documents\projeto-puc-rio\projeto-mvp-sprint4\api\venv\lib\site-packages\werkzeug\_internal.py L96  

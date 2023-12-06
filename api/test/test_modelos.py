@@ -8,7 +8,7 @@ modelo = Model()
 avaliador = Avaliador()
 
 # Parâmetros    
-url_dados = "../data/dataset_water_potability.csv"
+url_dados = "../data/dataset_water_potability_golden.csv"
 colunas = ['ph',
             'hardness',
             'solids',
@@ -37,14 +37,15 @@ Y = array[:,9]
 def test_modelo():  
     # Importando o modelo de RandomForestClassifier
     path = 'ml_model/water_potability.pkl'
-    modelo = Model.carrega_modelo(path)
+    modelo_rf =  Model.carrega_modelo(path)
 
     # Obtendo as métricas da RandomForestClassifier
-    acuracia, recall, precisao, f1 = avaliador.avaliar(modelo, X, Y)
+    acuracia, recall, precisao, f1 = avaliador.avaliar(modelo_rf, X, Y)
     print("Iniciando testes...")
     
     # Testando as métricas da RandomForestClassifier 
     # Modifique as métricas de acordo com seus requisitos
+    print(acuracia)
     assert acuracia >= 0.7 
     assert recall >= 0.5 
     assert precisao >= 0.5 

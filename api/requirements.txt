@@ -9,3 +9,5 @@ SQLAlchemy-Utils
 typing_extensions
 scikit-learn
 pandas
+numpy
+pytest
