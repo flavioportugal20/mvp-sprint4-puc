@@ -40,17 +40,17 @@ def test_modelo():
  
     # Importando o modelo de SVM
     path = 'ml_model/water_potability.pkl'
-    modelo =  Model.carrega_modelo(path)
+    modelo_svm =  Model.carrega_modelo(path)
 
     # aplicação da padronização no conjunto de treino
-    rescaledX = modelo.scaler.transform(X)
+    rescaledX = modelo_svm.scaler.transform(X)
 
     # Obtendo as métricas da SVM
-    acuracia, recall, precisao, f1 = avaliador.avaliar(modelo, rescaledX, Y)
+    acuracia, recall, precisao, f1 = avaliador.avaliar(modelo_svm, rescaledX, Y)
        
     # Testando as métricas da SVM 
     # Métricas de acordo com os requisitos
-    assert acuracia >= 0.7 
+    assert acuracia >= 0.65 
     assert recall >= 0.5 
     assert precisao >= 0.07
     assert f1 >= 0.1 

@@ -132,16 +132,16 @@ const postItemAgua = async (inputName,
 							     inputTrihalomethanes, 
 							     inputTurbidity) => {
   const formData = new FormData();
-  formData.append('name', inputName);
-  formData.append('ph', inputPh);
-  formData.append('hardness', inputHardness);
-  formData.append('solids', inputSolids);
-  formData.append('chloramines', inputChloramines);
-  formData.append('sulfate', inputSulfate);
-  formData.append('conductivity', inputConductivity);
-  formData.append('organic_carbon', inputOrganicCarbon);
-  formData.append('trihalomethanes', inputTrihalomethanes);
-  formData.append('turbidity', inputTurbidity);
+  formData.append('name', inputName.trim());
+  formData.append('ph', inputPh.trim());
+  formData.append('hardness', inputHardness.trim());
+  formData.append('solids', inputSolids.trim());
+  formData.append('chloramines', inputChloramines.trim());
+  formData.append('sulfate', inputSulfate.trim());
+  formData.append('conductivity', inputConductivity.trim());
+  formData.append('organic_carbon', inputOrganicCarbon.trim());
+  formData.append('trihalomethanes', inputTrihalomethanes.trim());
+  formData.append('turbidity', inputTurbidity.trim());
 
 
   let url = 'http://127.0.0.1:5000/agua';
@@ -179,16 +179,16 @@ const putItemAgua = async (idAgua,
 							    inputEstado) => {
   const formData = new FormData();
   formData.append('id', idAgua);
-  formData.append('name', inputName);
-  formData.append('ph', inputPh);
-  formData.append('hardness', inputHardness);
-  formData.append('solids', inputSolids);
-  formData.append('chloramines', inputChloramines);
-  formData.append('sulfate', inputSulfate);
-  formData.append('conductivity', inputConductivity);
-  formData.append('organic_carbon', inputOrganicCarbon);
-  formData.append('trihalomethanes', inputTrihalomethanes);
-  formData.append('turbidity', inputTurbidity);
+  formData.append('name', inputName.trim());
+  formData.append('ph', inputPh.trim());
+  formData.append('hardness', inputHardness.trim());
+  formData.append('solids', inputSolids.trim());
+  formData.append('chloramines', inputChloramines.trim());
+  formData.append('sulfate', inputSulfate.trim());
+  formData.append('conductivity', inputConductivity.trim());
+  formData.append('organic_carbon', inputOrganicCarbon.trim());
+  formData.append('trihalomethanes', inputTrihalomethanes.trim());
+  formData.append('turbidity', inputTurbidity.trim());
 
   let url = 'http://127.0.0.1:5000/agua';
   fetch(url, {
